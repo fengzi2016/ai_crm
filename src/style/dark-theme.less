@@ -1,64 +1,124 @@
 // 暗色主题变量定义
 :root[arco-theme='dark'] {
-  --color-bg-1: #0D0D0F;
-  --color-bg-2: #1A1A1C;
-  --color-bg-3: #202022;
-  --color-bg-4: #252527;
-  --color-bg-5: #2B2B2D;
-  
-  --color-text-1: rgba(255, 255, 255, 0.9);
-  --color-text-2: rgba(255, 255, 255, 0.7);
-  --color-text-3: rgba(255, 255, 255, 0.5);
-  --color-text-4: rgba(255, 255, 255, 0.3);
-  
-  --color-border-1: #2A2A2C;
-  --color-border-2: #333334;
-  --color-border-3: #3D3D3E;
-  
-  --color-fill-1: rgba(255, 255, 255, 0.04);
-  --color-fill-2: rgba(255, 255, 255, 0.08);
-  --color-fill-3: rgba(255, 255, 255, 0.12);
-  --color-fill-4: rgba(255, 255, 255, 0.16);
-  
-  --color-primary-light-1: #3366CC;
-  --color-success-light-1: #1A9932;
-  --color-warning-light-1: #E68A1A;
-  --color-danger-light-1: #CC3333;
-  
+  // 背景色系统 - 更深邃的层次感
+  --color-bg-1: #17171a; // 主背景色
+  --color-bg-2: #1e1e23; // 次级背景
+  --color-bg-3: #24242b; // 卡片背景
+  --color-bg-4: #2a2a32; // 悬浮背景
+  --color-bg-5: #31313a; // 高层级背景
+
+  // 文字色系统 - 更柔和的对比度
+  --color-text-1: rgba(255, 255, 255, 0.95); // 主要文字
+  --color-text-2: rgba(255, 255, 255, 0.75); // 常规文字
+  --color-text-3: rgba(255, 255, 255, 0.55); // 次要文字
+  --color-text-4: rgba(255, 255, 255, 0.35); // 禁用文字
+
+  // 边框色系统 - 更细腻的分割
+  --color-border-1: #2e2e36; // 重要分割
+  --color-border-2: #37373f; // 一般分割
+  --color-border-3: #424249; // 弱分割
+
+  // 填充色系统 - 更自然的层次
+  --color-fill-1: rgba(255, 255, 255, 0.05); // 弱填充
+  --color-fill-2: rgba(255, 255, 255, 0.09); // 一般填充
+  --color-fill-3: rgba(255, 255, 255, 0.13); // 重要填充
+  --color-fill-4: rgba(255, 255, 255, 0.17); // 特殊填充
+
+  // 主题色系统 - 更协调的色彩
+  --color-primary-light-1: #4477dd; // 主题色亮色
+  --color-success-light-1: #27ae60; // 成功色亮色
+  --color-warning-light-1: #f39c12; // 警告色亮色
+  --color-danger-light-1: #e74c3c; // 危险色亮色
+
   // 组件特定样式
   .arco-card {
     background-color: var(--color-bg-2);
+    border: 1px solid var(--color-border-2);
+    transition: all 0.3s ease;
+
+    &:hover {
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      border-color: var(--color-border-3);
+    }
   }
-  
+
   .arco-table {
     background-color: var(--color-bg-2);
-    
+    border: 1px solid var(--color-border-2);
+
     .arco-table-th {
       background-color: var(--color-bg-3);
+      border-bottom: 1px solid var(--color-border-2);
+      color: var(--color-text-1);
     }
-    
-    .arco-table-tr:hover {
-      background-color: var(--color-fill-2);
+
+    .arco-table-tr {
+      border-bottom: 1px solid var(--color-border-1);
+
+      &:hover {
+        background-color: var(--color-fill-2);
+      }
+    }
+
+    .arco-table-td {
+      color: var(--color-text-2);
     }
   }
-  
+
   .arco-input {
     background-color: var(--color-bg-2);
-  }
-  
-  .arco-btn {
-    &.arco-btn-secondary {
-      background-color: var(--color-neutral-3);
+    border: 1px solid var(--color-border-2);
+    color: var(--color-text-1);
+
+    &:hover,
+    &:focus {
+      border-color: var(--color-primary-light-1);
+      background-color: var(--color-bg-3);
+    }
+
+    &::placeholder {
+      color: var(--color-text-3);
     }
   }
-  
+
+  .arco-btn {
+    transition: all 0.3s ease;
+
+    &.arco-btn-secondary {
+      background-color: var(--color-bg-3);
+      border: 1px solid var(--color-border-2);
+      color: var(--color-text-1);
+
+      &:hover {
+        background-color: var(--color-bg-4);
+        border-color: var(--color-border-3);
+      }
+    }
+
+    &.arco-btn-primary {
+      &:hover {
+        opacity: 0.9;
+      }
+    }
+  }
+
   // 自定义组件样式
   .chart-wrapper {
     background-color: var(--color-bg-2);
+    border-radius: 4px;
+    padding: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   }
-  
+
   .panel-wrapper {
     background-color: var(--color-bg-2);
-    border-color: var(--color-border-2);
+    border: 1px solid var(--color-border-2);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+
+    &:hover {
+      border-color: var(--color-border-3);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
   }
 }
