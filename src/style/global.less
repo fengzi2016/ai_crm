@@ -31,12 +31,19 @@ body[arco-theme='dark'] {
     .bizcharts-tooltip {
       background: linear-gradient(
         304.17deg,
-        rgba(90, 92, 95, 0.6) -6.04%,
-        rgba(87, 87, 87, 0.6) 85.2%
+        rgba(42, 42, 43, 0.85) -6.04%,
+        rgba(50, 50, 50, 0.85) 85.2%
       ) !important;
-      backdrop-filter: blur(10px);
+      backdrop-filter: blur(12px);
       border-radius: 6px;
-      box-shadow: none !important;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: var(--color-text-1);
+      transition: all 0.3s ease;
+
+      &:hover {
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3) !important;
+      }
     }
   }
 }

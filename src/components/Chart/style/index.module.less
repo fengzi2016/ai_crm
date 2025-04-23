@@ -29,8 +29,15 @@
 body[arco-theme='dark'] {
   .customer-tooltip {
     &-item {
-      background: #2a2a2b;
-      box-shadow: 6px 0px 20px rgba(34, 87, 188, 0.1);
+      background: rgba(42, 42, 43, 0.9);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: var(--color-text-1);
+
+      :global(.arco-badge-status-dot) {
+        box-shadow: 0 0 4px rgba(255, 255, 255, 0.2);
+      }
     }
   }
 }
