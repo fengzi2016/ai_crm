@@ -1,45 +1,45 @@
 :root[arco-theme='light'] {
-  // 背景色系统 - 清爽层次
+  // 背景色系统 - 清新层次
   --color-bg-1: #ffffff; // 主背景色 - 纯净白
-  --color-bg-2: #f7f8fa; // 次级背景 - 淡灰白
-  --color-bg-3: #f2f3f5; // 卡片背景 - 浅灰
-  --color-bg-4: #e5e6eb; // 悬浮背景 - 中灰
-  --color-bg-5: #c9cdd4; // 高层级背景 - 深灰
+  --color-bg-2: #fafafa; // 次级背景 - 更柔和的灰白
+  --color-bg-3: #f5f5f5; // 卡片背景 - 温和浅灰
+  --color-bg-4: #f0f0f0; // 悬浮背景 - 淡雅灰
+  --color-bg-5: #e8e8e8; // 高层级背景 - 柔和深灰
 
-  // 文字色系统 - 舒适阅读
-  --color-text-1: rgba(0, 0, 0, 0.95); // 主要文字 - 近黑
-  --color-text-2: rgba(0, 0, 0, 0.85); // 常规文字 - 深灰
-  --color-text-3: rgba(0, 0, 0, 0.65); // 次要文字 - 中灰
-  --color-text-4: rgba(0, 0, 0, 0.45); // 禁用文字 - 浅灰
+  // 文字色系统 - 清晰易读
+  --color-text-1: rgba(0, 0, 0, 0.88); // 主要文字 - 清晰黑
+  --color-text-2: rgba(0, 0, 0, 0.75); // 常规文字 - 舒适灰
+  --color-text-3: rgba(0, 0, 0, 0.55); // 次要文字 - 柔和灰
+  --color-text-4: rgba(0, 0, 0, 0.35); // 禁用文字 - 淡雅灰
 
-  // 边框色系统 - 柔和分隔
-  --color-border-1: #e5e6eb; // 重要分割 - 明显
-  --color-border-2: #e8e8e8; // 一般分割 - 标准
+  // 边框色系统 - 优雅分隔
+  --color-border-1: #e0e0e0; // 重要分割 - 清晰
+  --color-border-2: #e8e8e8; // 一般分割 - 适中
   --color-border-3: #f0f0f0; // 弱分割 - 柔和
 
-  // 填充色系统 - 轻柔过渡
-  --color-fill-1: rgba(0, 0, 0, 0.04); // 弱填充 - 最浅
-  --color-fill-2: rgba(0, 0, 0, 0.08); // 一般填充 - 浅灰
-  --color-fill-3: rgba(0, 0, 0, 0.12); // 重要填充 - 中灰
-  --color-fill-4: rgba(0, 0, 0, 0.16); // 特殊填充 - 深灰
+  // 填充色系统 - 自然过渡
+  --color-fill-1: rgba(0, 0, 0, 0.02); // 弱填充 - 极淡
+  --color-fill-2: rgba(0, 0, 0, 0.04); // 一般填充 - 轻柔
+  --color-fill-3: rgba(0, 0, 0, 0.06); // 重要填充 - 温和
+  --color-fill-4: rgba(0, 0, 0, 0.08); // 特殊填充 - 适中
 
-  // 主题色系统 - 清新明快
-  --color-primary-light-1: #1890ff; // 主题色亮色
-  --color-success-light-1: #52c41a; // 成功色亮色
-  --color-warning-light-1: #faad14; // 警告色亮色
-  --color-danger-light-1: #ff4d4f; // 危险色亮色
+  // 主题色系统 - 活力明快
+  --color-primary-light-1: #1890ff; // 主题色 - 清新蓝
+  --color-success-light-1: #52c41a; // 成功色 - 生机绿
+  --color-warning-light-1: #faad14; // 警告色 - 温暖橙
+  --color-danger-light-1: #ff4d4f; // 危险色 - 警示红
 
   // 组件特定样式
   .arco-card {
     background-color: var(--color-bg-1);
     border: 1px solid var(--color-border-2);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
 
     &:hover {
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
       border-color: var(--color-border-3);
-      transform: translateY(-2px);
+      transform: translateY(-1px);
     }
   }
 
@@ -51,6 +51,7 @@
       background-color: var(--color-bg-2);
       border-bottom: 1px solid var(--color-border-2);
       color: var(--color-text-1);
+      font-weight: 500;
     }
 
     .arco-table-tr {
@@ -63,6 +64,7 @@
 
     .arco-table-td {
       color: var(--color-text-2);
+      padding: 12px 16px;
     }
   }
 
@@ -70,11 +72,15 @@
     background-color: var(--color-bg-1);
     border: 1px solid var(--color-border-2);
     color: var(--color-text-1);
+    transition: all 0.2s ease;
 
-    &:hover,
+    &:hover {
+      border-color: var(--color-border-3);
+    }
+
     &:focus {
       border-color: var(--color-primary-light-1);
-      background-color: var(--color-bg-1);
+      box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.1);
     }
 
     &::placeholder {
@@ -83,7 +89,8 @@
   }
 
   .arco-btn {
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
+    font-weight: 500;
 
     &.arco-btn-secondary {
       background-color: var(--color-bg-2);
@@ -94,11 +101,20 @@
         background-color: var(--color-bg-3);
         border-color: var(--color-border-3);
       }
+
+      &:active {
+        background-color: var(--color-bg-4);
+      }
     }
 
     &.arco-btn-primary {
       &:hover {
-        opacity: 0.9;
+        opacity: 0.85;
+        transform: translateY(-1px);
+      }
+
+      &:active {
+        transform: translateY(0);
       }
     }
   }
@@ -106,28 +122,28 @@
   // 自定义组件样式
   .chart-wrapper {
     background-color: var(--color-bg-1);
-    border-radius: 6px;
-    padding: 20px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+    padding: 24px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
     &:hover {
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
-      transform: translateY(-2px);
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+      transform: translateY(-1px);
     }
   }
 
   .panel-wrapper {
     background-color: var(--color-bg-1);
     border: 1px solid var(--color-border-2);
-    border-radius: 6px;
+    border-radius: 8px;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
 
     &:hover {
       border-color: var(--color-border-3);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      transform: translateY(-2px);
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.06);
+      transform: translateY(-1px);
     }
 
     &:active {
