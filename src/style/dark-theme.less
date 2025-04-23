@@ -1,0 +1,64 @@
+// 暗色主题变量定义
+:root[arco-theme='dark'] {
+  --color-bg-1: #17171A;
+  --color-bg-2: #232324;
+  --color-bg-3: #2A2A2B;
+  --color-bg-4: #313132;
+  --color-bg-5: #373739;
+  
+  --color-text-1: rgba(255, 255, 255, 0.9);
+  --color-text-2: rgba(255, 255, 255, 0.7);
+  --color-text-3: rgba(255, 255, 255, 0.5);
+  --color-text-4: rgba(255, 255, 255, 0.3);
+  
+  --color-border-1: #333335;
+  --color-border-2: #404041;
+  --color-border-3: #4C4C4D;
+  
+  --color-fill-1: rgba(255, 255, 255, 0.04);
+  --color-fill-2: rgba(255, 255, 255, 0.08);
+  --color-fill-3: rgba(255, 255, 255, 0.12);
+  --color-fill-4: rgba(255, 255, 255, 0.16);
+  
+  --color-primary-light-1: #4080FF;
+  --color-success-light-1: #23C343;
+  --color-warning-light-1: #FF9A2E;
+  --color-danger-light-1: #F53F3F;
+  
+  // 组件特定样式
+  .arco-card {
+    background-color: var(--color-bg-2);
+  }
+  
+  .arco-table {
+    background-color: var(--color-bg-2);
+    
+    .arco-table-th {
+      background-color: var(--color-bg-3);
+    }
+    
+    .arco-table-tr:hover {
+      background-color: var(--color-fill-2);
+    }
+  }
+  
+  .arco-input {
+    background-color: var(--color-bg-2);
+  }
+  
+  .arco-btn {
+    &.arco-btn-secondary {
+      background-color: var(--color-neutral-3);
+    }
+  }
+  
+  // 自定义组件样式
+  .chart-wrapper {
+    background-color: var(--color-bg-2);
+  }
+  
+  .panel-wrapper {
+    background-color: var(--color-bg-2);
+    border-color: var(--color-border-2);
+  }
+}
