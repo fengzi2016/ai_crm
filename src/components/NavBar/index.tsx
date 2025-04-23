@@ -142,6 +142,18 @@ function Navbar({ show }: { show: boolean }) {
           <Logo />
           <div className={styles['logo-name']}>Arco Pro</div>
         </div>
+        <Tooltip
+          content={
+            theme === 'light'
+              ? t['settings.navbar.theme.toDark']
+              : t['settings.navbar.theme.toLight']
+          }
+        >
+          <IconButton
+            icon={theme !== 'dark' ? <IconMoonFill /> : <IconSunFill />}
+            onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
+          />
+        </Tooltip>
       </div>
       <ul className={styles.right}>
         <li>
@@ -176,20 +188,7 @@ function Navbar({ show }: { show: boolean }) {
             <IconButton icon={<IconNotification />} />
           </MessageBox>
         </li>
-        <li>
-          <Tooltip
-            content={
-              theme === 'light'
-                ? t['settings.navbar.theme.toDark']
-                : t['settings.navbar.theme.toLight']
-            }
-          >
-            <IconButton
-              icon={theme !== 'dark' ? <IconMoonFill /> : <IconSunFill />}
-              onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
-            />
-          </Tooltip>
-        </li>
+
         <Settings />
         {userInfo && (
           <li>
